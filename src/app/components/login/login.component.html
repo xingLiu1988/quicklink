@@ -1,1 +1,29 @@
-<p>login works!</p>
+<div id="mainContent">
+    <h3 class="mb-4">Login</h3>
+
+    <form id="loginForm">
+        <div class="form-group">
+            <!-- pick userrole -->
+            <input type="radio" name="type" class="typeOfUser" value="employee" [(ngModel)]="user.userRole" />
+            <label for="employee">Employee</label>
+            <input type="radio" name="type" class="typeOfUser ml-2" value="manager" [(ngModel)]="user.userRole" />
+            <label for="employee">Manager</label>
+            <!-- enter username -->
+            <div class="form-group mt-3">
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" [(ngModel)]="user.username" required />
+            </div>
+
+            <!-- enter password -->
+            <div class="form-group mt-3">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" [(ngModel)]="user.password" />
+            </div>
+
+            <!-- warningText -->
+            <div class="warningText mt-3">{{ warningText}}</div>
+
+            <!-- submit -->
+            <button class="btn btn-primary btn-block mt-3" (click)="login()">Submit</button>
+        </div>
+    </form>
+
+</div>

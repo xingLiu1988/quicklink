@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
-    background-image: url("./assets/images/background1.jpg"); /* The image used */
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 500px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-image: url("./assets/images/background1.jpg");
+    /* The image used */
+    background-color: #cccccc;
+    /* Used if the image is unavailable */
+    height: 500px;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
