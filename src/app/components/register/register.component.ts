@@ -9,11 +9,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
 
-  title = 'Register User';
+  title = 'User Registration';
   password2: string = '';
-  // warningText: string = '1';
+  
   // For data binding
   public user: User = new User(0, '', '', '');
 
@@ -22,10 +22,14 @@ export class RegisterComponent implements OnInit {
 
   constructor(private registerService: RegisterServiceService) { }
 
-  ngOnInit(): void {
-  }
 
   public registerUserFromService(): void {
+
+    // check if every field is filled
+    if (!this.user.username || !this.user.password || !this.user.userRole) {
+      this.clientMessage.message = "All FIELDS ARE REQUIRED";
+      return;
+    }
     // compare user.password === password2
     if(this.user.password !== this.password2){
       //this.warningText = "PASSWORD NOT MATCH";
@@ -33,7 +37,7 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this.registerService.registerUser(this.user).subscribe(data => this.clientMessage = data,
-      error => this.clientMessage.message = 'SOMETHING WENT WRONG');
+      error => this.clientMessage.message = "SOMETHING WENT WRONG");
   }
 
 }

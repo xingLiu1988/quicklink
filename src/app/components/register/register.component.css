@@ -1,5 +1,6 @@
 div.card {
-    width: 80%;
+    width: 50%;
+    height: 80%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: auto;
     
@@ -8,5 +9,17 @@ div.card {
 button {
     margin-top: 10px;
     
+}
+
+.warning {
+    color: rgb(12, 8, 29);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(241, 39, 12);
+    text-align: justify;
+    padding-left: 10px;
+}
+
+.card-header {
+    background-color: rgb(29, 168, 120);
 }
 
