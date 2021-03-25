@@ -1,0 +1,12 @@
+.post {
+        width: 500px;
+        margin: 50px auto;
+        padding-bottom: 300px;
+}
+.post label{
+        font-weight: bold;
+}
+
+.post span {
+        color: red;
+}
