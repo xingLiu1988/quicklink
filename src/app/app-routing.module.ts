@@ -1,3 +1,4 @@
+import { PostComponent } from './components/post/post.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileServiceService } from './services/profile-service.service';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'profile', component: EmployeeComponent}
+  {path: 'profile', component: EmployeeComponent},
+  {path: 'post', component: PostComponent}
   
 ];
 
