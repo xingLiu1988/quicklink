@@ -1,1 +1,48 @@
-<p>register works!</p>
+<div class="card">
+
+    <h5 class="card-header">{{ title }}</h5>
+
+    <div class="card-body">
+
+
+        <!-- username -->
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input [(ngModel)]="user.username" type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+
+        <!-- password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input [(ngModel)]="user.password" type="password" class="form-control" id="password"
+                placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="password2">Confirm Password</label>
+            <input [(ngModel)]="password2" type="password" class="form-control" id="password1"
+                placeholder="Confirm password">
+        </div>
+        <div class="form-check form-check-inline">
+            <input [(ngModel)]="user.userRole" class="form-check-input" type="radio" name="type" id="role" value="employee">
+            <label class="form-check-label" for="role">Employee</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input [(ngModel)]="user.userRole" class="form-check-input" type="radio" name="type" id="role2"
+                value="employer">
+            <label class="form-check-label" for="role2">Employer</label>
+        </div>
+
+        <!-- submit button -->
+        <div>
+            <button (click)="registerUserFromService()" class="btn btn-primary">Register</button>
+        </div>
+        
+
+        <div>
+            {{ clientMessage.message }}
+        </div>
+
+    </div>
+
+
+</div>
