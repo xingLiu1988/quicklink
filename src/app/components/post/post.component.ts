@@ -13,7 +13,7 @@ export class PostComponent implements OnInit {
 
   constructor(private postService: PostServiceService) { }
 
-  public post: Post = new Post(0, '', '', 'AL', '', 0, '', 0, 0);
+  public post: Post = new Post(0, '', '', 'AL', '', 0, '', 0, 0,'');
 
   ngOnInit(): void {
     this.getCurrentUser();//get current employerId

@@ -6,7 +6,7 @@ export class Post {
   salary: string;
   phoneNumber: number;
   description: string;
-
+  postDate: string;
   userId: number; //store userId(id) of who applied this job
   employerId: number; //store employer id who post this job
 
@@ -19,7 +19,8 @@ export class Post {
     phoneNumber: number,
     description: string,
     userId: number,
-    employerId: number
+    employerId: number,
+    postDate: string
   ) {
     this.postId = postId;
     this.companyName = companyName;
@@ -30,5 +31,6 @@ export class Post {
     this.description = description;
     this.userId = userId;
     this.employerId = employerId;
+    this.postDate = postDate
   }
 }

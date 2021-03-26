@@ -1,1 +1,44 @@
-<p>home works!</p>
+<div class="home container">
+        <div class="filter">
+                <div class="row">
+                        <!-- filter by category -->
+                        <div class="col-6">
+                                <div class="form-group">
+                                        <label for="category">By Category</label>
+                                        <select class="form-control">
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                        </select>
+                                </div>
+                        </div>
+
+                        <!-- filter by location -->
+                        <div class="col-6">
+                                <div class="form-group">
+                                        <label for="location">By Location</label>
+                                        <select class="form-control">
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                                <option value="">1</option>
+                                        </select>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <!-- display all jobs -->
+        <div class="box">
+                <div class="jobs mb-4 p-2" *ngFor="let post of posts">
+                        <div class="line1"><span class="font-weight-bold">Company:</span> {{post.companyName}}</div>
+                        <div class="line2 mt-1"><span class="font-weight-bold">Job Title:</span> {{post.jobTitle}}</div>
+                        <div class="line3 text-secondary mt-1"><span class="font-weight-bold text-dark">Location:</span> {{post.location}} <span class="float-right pr-4">Post Date: {{post.postDate}}</span></div>  
+                </div>
+        </div>
+        <br>
+        <br>
+</div>
