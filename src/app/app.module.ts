@@ -14,6 +14,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { EmployerComponent } from './components/employer/employer.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { PostComponent } from './components/post/post.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PostComponent } from './components/post/post.component';
     RegisterComponent,
     EmployerComponent,
     EmployeeComponent,
-    PostComponent
+    PostComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

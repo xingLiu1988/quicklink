@@ -1,3 +1,4 @@
+import { AboutComponent } from './components/about/about.component';
 import { PostComponent } from './components/post/post.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { LoginComponent } from './components/login/login.component';
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: EmployeeComponent},
-  {path: 'post', component: PostComponent}
+  {path: 'post', component: PostComponent},
+  {path: 'about', component: AboutComponent}
   
 ];
 
