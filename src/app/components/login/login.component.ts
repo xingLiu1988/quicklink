@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   public login(): void {
     console.log('submit button is clicked');
     // validate user input
-    if(!this.user.userRole || !this.user.username || !this.user.password){
+    if(!this.user.role || !this.user.username || !this.user.password){
       this.warningText = "Please enter all required field";
       console.log('inside')
       return;
