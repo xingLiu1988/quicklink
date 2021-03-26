@@ -16,13 +16,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: EmployeeComponent},
-<<<<<<< HEAD
   {path: 'post', component: PostComponent},
   {path: 'about', component: AboutComponent}
-  
-=======
-  {path: 'post', component: PostComponent}
->>>>>>> 213d5b9501bbdcfc3fde26bbdd95e17ed40a9481
 ];
 
 @NgModule({
