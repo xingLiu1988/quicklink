@@ -1,4 +1,6 @@
+import { Employer } from './../../models/employer.model';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-employer',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employer.component.css']
 })
 export class EmployerComponent implements OnInit {
+
+  employer: Employer = new Employer('XXX', 'John', 'Doe', 'johnd@mail.com', 999-999-999, '111 Abs St.');
 
   constructor() { }
 

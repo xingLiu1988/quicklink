@@ -1,1 +1,20 @@
-<p>employer works!</p>
+<!-- <p>employer works!</p> -->
+<!-- show only when user didn't setup info -->
+<div class="incomplete" *ngIf="!employer.firstName; else info">
+    <a routerLink="submit-profile"><strong>Please, complete your profile</strong></a>
+</div>
+
+<!-- show only when user setup info already -->
+
+<ng-template #info class="card">
+    <div class="card">
+
+        <h1>{{ employer.firstName }} {{ employer.lastName }}</h1>
+        <h3>Company: <i>{{ employer.companyName }}</i></h3>
+        <h3>Email: <i>{{ employer.email }}</i></h3>
+        <h3>Phone: <i>{{ employer.phone }}</i></h3>
+        <h3>Address: <i>{{ employer.address }}</i></h3>
+
+    </div>
+
+</ng-template>
