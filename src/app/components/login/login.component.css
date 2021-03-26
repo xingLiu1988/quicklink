@@ -8,11 +8,11 @@
 
 #mainContent {
     padding: 40px;
-    width: 400px;
+    width: 500px;
     margin: 100px auto;
     color: rgb(63, 68, 48);
-    border: 1px solid rgb(190, 186, 186);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    /* border: 1px solid rgb(190, 186, 186); */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
 }
 
 .warningText {

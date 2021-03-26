@@ -1,0 +1,17 @@
+.home {
+        margin: 50px auto;
+        margin-bottom: 300px;
+}
+label {
+        font-weight: bold;
+}
+
+.jobs {
+        background-color: rgb(245, 245, 245);
+        border-radius: 10px;
+        border: 1px solid rgb(231, 231, 231);
+        cursor: pointer;
+}
+.jobs:hover {
+        background-color: rgb(233, 243, 214);
+}
