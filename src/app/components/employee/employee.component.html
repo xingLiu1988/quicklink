@@ -1,1 +1,31 @@
-<p>employee works!</p>
+<!-- show only when user didn't setup info -->
+<div class="incomplete" *ngIf="!employee.firstName; else info">
+    <a routerLink="submit-profile"><strong>Please, complete your profile</strong></a>
+</div>
+
+<!-- show only when user setup info already -->
+
+<ng-template #info class="card">
+    <div class="card">
+
+        <h1>{{ employee.firstName }} {{ employee.lastName }}</h1>
+        <h3>Email: <i>{{ employee.email }}</i></h3>
+        <h3>Phone: <i>{{ employee.phone }}</i></h3>
+        <h3>Address: <i>{{ employee.address }}</i></h3>
+
+    </div>
+
+</ng-template>
+
+<!-- <ng-template #info class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">{{ employee.firstName }} {{ employee.lastName }}</div>
+    <div class="card-body">
+        <h5 class="card-text">First Name: </h5> {{ employee.firstName }}
+        <h5 class="card-text">Last Name: </h5> {{ employee.lastName }}
+        <h5 class="card-text">Email: </h5> {{ employee.email }}
+        <h5 class="card-text">Address: </h5> {{ employee.address }}
+        <h5 class="card-text">Phone: </h5> {{ employee.phone }}
+    </div>
+</ng-template> -->
+
+<!-- display all job postings -->
