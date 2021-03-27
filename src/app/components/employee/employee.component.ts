@@ -10,11 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class EmployeeComponent implements OnInit {
 
   //employee: Employee = new Employee('', '', '', 0, '');
-  employee: Employee = new Employee('Jane', 'Doe', 'jdoe@mail.com', 0, 'abc');
-
+  // employee: Employee = new Employee('Jane', 'Doe', 'jdoe@mail.com', 0, 'abc');
+  employee: Employee = new Employee(1, 'xing', 'liu', 'username', 'password', 'xingliu@email.com', 911, 'USA', 'employee');
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 

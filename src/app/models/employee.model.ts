@@ -1,18 +1,33 @@
 export class Employee {
+  id: number;
+  firstName: string;
+  lastName: string;
+  username: string;
+  password: string;
+  email: string;
+  phoneNumber: number;
+  address: string;
+  role: string;
 
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: number;
-    address: string;
-
-
-    constructor(firstName: string, lastName: string, email: string, phone: number, address: string) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.phone = phone;
-        this.address = address;
-    }
-
+  constructor(
+    id: number,
+    firstName: string,
+    lastName: string,
+    username: string,
+    password: string,
+    email: string,
+    phoneNumber: number,
+    address: string,
+    role: string
+  ) {
+    this.id = id;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.username = username;
+    this.password = password;
+    this.email = email;
+    this.phoneNumber = phoneNumber;
+    this.address = address;
+    this.role = role;
+  }
 }

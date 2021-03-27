@@ -14,6 +14,7 @@ export class EmployerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
