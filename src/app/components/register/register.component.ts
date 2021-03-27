@@ -20,6 +20,7 @@ export class RegisterComponent {
   // For data binding
   public user: User = new User(0, '', '', '');
 
+
   // Client message to the user
   public clientMessage: ClientMessage = new ClientMessage('');
 
@@ -51,16 +52,20 @@ export class RegisterComponent {
         }
 
         // when it's success
-        this.user = new User(0, '', '', '');
         this.isRegistered = !this.isRegistered;
         this.clientMessage = data;
         console.log('before to change');
         this.shareData.changeStatus(true);
         console.log('after to change');
-
-        // setTimeout(()=>{
-        //   this.router.navigate(['login']);
-        // }, 5000)
+        
+        setTimeout(()=>{
+          // check if it's a employee or employer
+          if(this.user.role === 'employee'){
+            this.router.navigate(['employee']);
+          }else{
+            this.router.navigate(['employer']);
+          }
+        }, 2000)
       },
       (error) => (this.clientMessage.message = 'SOMETHING WENT WRONG')
     );
