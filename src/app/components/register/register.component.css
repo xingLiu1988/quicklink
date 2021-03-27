@@ -18,8 +18,16 @@ button {
     padding-left: 10px;
 }
 
+.green-light {
+    color: rgb(12, 8, 29);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(59, 236, 103);
+    text-align: justify;
+    padding-left: 10px;
+}
+
 .card-header {
-    background-color: rgb(29, 168, 120);
+    background-color: rgb(131, 131, 136);
 }
 
 

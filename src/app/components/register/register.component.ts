@@ -14,6 +14,8 @@ export class RegisterComponent {
   title = 'User Registration';
   password2: string = '';
 
+  isRegistered: boolean = false;
+
   // For data binding
   public user: User = new User(0, '', '', '');
 
@@ -25,6 +27,7 @@ export class RegisterComponent {
   public registerUserFromService(): void {
     // check if every field is filled
     if (!this.user.username || !this.user.password || !this.user.role) {
+      this.isRegistered = this.isRegistered;
       this.clientMessage.message = 'All FIELDS ARE REQUIRED';
       return;
     }
@@ -32,6 +35,7 @@ export class RegisterComponent {
     // compare user.password === password2
     if (this.user.password !== this.password2) {
       //this.warningText = "PASSWORD NOT MATCH";
+      this.isRegistered = this.isRegistered;
       this.clientMessage.message = "PASSWORD DON'T MATCH";
       return;
     }
@@ -40,12 +44,14 @@ export class RegisterComponent {
       (data) => {
         // when it's failed 
         if(!data){
+          this.isRegistered = this.isRegistered;
           this.clientMessage.message = "failed";
           return;
         }
 
         // when it's success
         this.user = new User(0, '', '', '');
+        this.isRegistered = !this.isRegistered;
         this.clientMessage = data;
         setTimeout(()=>{
           this.router.navigate(['login']);
