@@ -1,3 +1,4 @@
+import { ShareDataService } from './../../services/share-data.service';
 import { ClientMessage } from './../../models/client-message.model';
 import { User } from './../../models/user.model';
 import { RegisterServiceService } from './../../services/register-service.service';
@@ -22,7 +23,7 @@ export class RegisterComponent {
   // Client message to the user
   public clientMessage: ClientMessage = new ClientMessage('');
 
-  constructor(private registerService: RegisterServiceService, private router: Router) {}
+  constructor(private registerService: RegisterServiceService, private router: Router, private shareData: ShareDataService) {}
 
   public registerUserFromService(): void {
     // check if every field is filled
@@ -53,9 +54,13 @@ export class RegisterComponent {
         this.user = new User(0, '', '', '');
         this.isRegistered = !this.isRegistered;
         this.clientMessage = data;
-        setTimeout(()=>{
-          this.router.navigate(['login']);
-        }, 5000)
+        console.log('before to change');
+        this.shareData.changeStatus(true);
+        console.log('after to change');
+
+        // setTimeout(()=>{
+        //   this.router.navigate(['login']);
+        // }, 5000)
       },
       (error) => (this.clientMessage.message = 'SOMETHING WENT WRONG')
     );

@@ -1,3 +1,4 @@
+import { ShareDataService } from './../../services/share-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,9 +12,10 @@ export class NavbarComponent implements OnInit {
 
   title = 'QuickLink';
 
-  constructor() { }
+  constructor(private shareData: ShareDataService) { }
 
   ngOnInit(): void {
+    this.shareData.change.subscribe(status => this.isLogedIn = status);
   }
 
 }
