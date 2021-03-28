@@ -1,36 +1,36 @@
 export class Post {
   postId: number;
   companyName: string;
-  jobTitle: string;
+  title: string;
+  category: string;
   location: string;
-  salary: string;
+  salary: number; // changed to number
   phoneNumber: number;
   description: string;
-  postDate: string;
-  userId: number; //store userId(id) of who applied this job
+   //store userId(id) of who applied this job
   employerId: number; //store employer id who post this job
 
   constructor(
     postId: number,
     companyName: string,
-    jobTitle: string,
+    title: string,
+    category: string,
     location: string,
-    salary: string,
+    salary: number, // changed to number
     phoneNumber: number,
     description: string,
-    userId: number,
-    employerId: number,
-    postDate: string
+    
+    employerId: number
   ) {
     this.postId = postId;
     this.companyName = companyName;
-    this.jobTitle = jobTitle;
+    this.title = title;
+    this.category = category;
     this.location = location;
     this.salary = salary;
     this.phoneNumber = phoneNumber;
     this.description = description;
-    this.userId = userId;
+    
     this.employerId = employerId;
-    this.postDate = postDate
   }
 }

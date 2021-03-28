@@ -4,7 +4,6 @@ import { User } from './../../models/user.model';
 import { RegisterServiceService } from './../../services/register-service.service';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { timeout } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',

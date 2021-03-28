@@ -2,19 +2,33 @@
         <!-- company name -->
         <div class="form-group">
                 <label for=""><span>*</span> Company Name:</label>
-                <input [(ngModel)]="post.companyName" type="text" class="form-control" placeholder="please enter company name">
+                <input [(ngModel)]="post2.companyName" type="text" class="form-control" placeholder="please enter company name">
         </div>
 
         <!-- job title -->
         <div class="form-group">
                 <label for=""><span>*</span> Job Title:</label>
-                <input type="text" [(ngModel)]="post.jobTitle" class="form-control" placeholder="please enter job title">
+                <input type="text" [(ngModel)]="post2.title" class="form-control" placeholder="please enter job title">
+        </div>
+
+        <!-- category -->
+        <div class="form-group">
+                <label for=""><span>*</span> Category:</label>
+                <select class="form-control" [(ngModel)]="post2.category">
+                        <option value="accounting">accounting</option>
+                        <option value="education">education</option>
+                        <option value="food">food</option>
+                        <option value="sales">sales</option>
+                        <option value="security">security</option>
+                        <option value="driver">driver</option>
+                        <option value="marketing">marketing</option>
+                </select>
         </div>
 
         <!-- state -->
         <div class="form-group">
                 <label for=""><span>*</span> Location:</label>
-                <select class="form-control" [(ngModel)]="post.location">
+                <select class="form-control" [(ngModel)]="post2.location">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -72,19 +86,19 @@
         <!-- salary -->
         <div class="form-group">
                 <label for=""><span>*</span> Salary:</label>
-                <input type="text" [(ngModel)]="post.salary" class="form-control" placeholder="please enter company name">
+                <input type="number" [(ngModel)]="post2.salary" class="form-control" placeholder="please enter company name">
         </div>
 
         <!-- phone number -->
         <div class="form-group">
                 <label for=""><span>*</span> Phone Number</label>
-                <input type="number" [(ngModel)]="post.phoneNumber" class="form-control" placeholder="please enter company name">
+                <input type="number" [(ngModel)]="post2.phoneNumber" class="form-control" placeholder="please enter company name">
         </div>
 
         <!-- description -->
         <div class="form-group">
                 <label for=""><span>*</span> Description</label>
-                <textarea [(ngModel)]="post.description" name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                <textarea [(ngModel)]="post2.description" name="" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>
 
         <!-- submit button -->
