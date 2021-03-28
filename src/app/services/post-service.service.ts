@@ -20,7 +20,7 @@ export class PostServiceService {
   // used to receive a post from component and send post to the backend
   public postJob(post: PostNoId): Observable<ClientMessage> {
     console.log(post);
-    return this.http.post<ClientMessage>(`${QUICKLINK_URL}registerposts`, post, this.httpOptions)
+    return this.http.post<ClientMessage>(`${QUICKLINK_URL}registerPost`, post, this.httpOptions)
       .pipe(
         catchError(this.handleError<any>('post failed'))
       );
