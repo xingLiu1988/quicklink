@@ -18,7 +18,7 @@ export class PostServiceService {
     headers: new HttpHeaders({'Content-Type' : 'application/json'})
   }
   // used to receive a post from component and send post to the backend
-  public postJob(post: PostNoId): Observable<ClientMessage> {
+  public postJob2(post: PostNoId): Observable<ClientMessage> {
     console.log(post);
     return this.http.post<ClientMessage>(`${QUICKLINK_URL}registerPost`, post, this.httpOptions)
       .pipe(
@@ -26,11 +26,24 @@ export class PostServiceService {
       );
   }
 
+  public postJob(post: PostNoId): Observable<ClientMessage> {
+    
+    return this.http.post<ClientMessage>(`${QUICKLINK_URL}registerPost`, post, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('cannot register the user!'))
+    );
+  }
+  // private handleError<T>(operation = 'operation', result?: T) {
+  //   return (error: any): Observable<T> => {
+  //     console.error(error); // log it to the console if something goes wrong
+
+  //     // Let the app keep running by returning an empty result.
+  //     return of(result as T);
+  //   }
+  // }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      console.error(error); // log it to the console if something goes wrong
-
-      // Let the app keep running by returning an empty result.
+      console.error(error);
       return of(result as T);
     }
   }

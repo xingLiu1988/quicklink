@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ClientMessage } from './../../models/client-message.model';
 import { PostServiceService } from './../../services/post-service.service';
 // import { Post } from './../../models/post.model';
@@ -11,10 +12,11 @@ import {PostNoId} from './../../models/postNoId.model';
 export class PostComponent implements OnInit {
   warningText?: string;
 
-  constructor(private postService: PostServiceService) {}
+  constructor(private postService: PostServiceService, private router: Router) {}
   public clientMessage: ClientMessage = new ClientMessage('');
   // public post: Post = new Post(0, '', '', '', '', 0, 0, '', 0);
-  public post2: PostNoId = new PostNoId('', '', '', '', 0, 0, '', 0, 0);
+  // public post2: PostNoId = new PostNoId('', '', '', '', 0, 0, '', 0, 0);
+  public post2: PostNoId = new PostNoId('', '', '', '', 0, '', '', 0, 0);
 
   ngOnInit(): void {
     this.getCurrentUser(); //get current employerId
@@ -43,7 +45,13 @@ export class PostComponent implements OnInit {
     this.post2.employerId = currentUser.id;
     // STPE 2: send post to the postService
     this.postService.postJob(this.post2).subscribe(
-      (data) => (this.clientMessage = data),
+      (data) => {
+        this.clientMessage = data;
+        this.post2 = new PostNoId('', '', '', '', 0, '', '', 0, 0);
+        setTimeout(()=>{
+          this.router.navigate(['home']);
+        }, 2000)
+      },
       (error) => (this.warningText = 'SOMETHING WENT WRONG!')
     );
   }

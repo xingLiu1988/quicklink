@@ -17,7 +17,7 @@ export class RegisterComponent {
   isRegistered: boolean = false;
 
   // For data binding
-  public user: User = new User(0, 'k', '', '');
+  public user: User = new User(0, '', '', '');
 
 
   // Client message to the user
@@ -50,23 +50,11 @@ export class RegisterComponent {
           return;
         }
 
-        // store current user to session storage
-        // sessionStorage.setItem('currentUser', JSON.stringify(this.user));
-
         // when it's success
-        this.isRegistered = !this.isRegistered;
         this.clientMessage = data;
-        console.log('before to change');
-        this.shareData.changeStatus(true);
-        console.log('after to change');
         
+        // redirect after 2 seconds
         setTimeout(()=>{
-          // check if it's a employee or employer
-          // if(this.user.role === 'employee'){
-          //   this.router.navigate(['employee']);
-          // }else{
-          //   this.router.navigate(['employer']);
-          // }
           this.router.navigate(['login']);
         }, 2000)
       },
