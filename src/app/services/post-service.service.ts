@@ -12,7 +12,6 @@ import { Injectable } from '@angular/core';
 })
 export class PostServiceService {
 
-  
   constructor(private http: HttpClient) { }
   
   httpOptions = {
