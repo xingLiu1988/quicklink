@@ -25,11 +25,15 @@
                 <a class="nav-link" routerLink="about">About</a>
             </li>
             <li class="nav-item" *ngIf="isLogedIn">
-                <a class="nav-link" routerLink="">Logout</a>
+                <a class="nav-link" (click)="logout()" href="#">Logout</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" *ngIf="isLogedIn" routerLink="profile">Profile</a>
+                <a class="nav-link" *ngIf="isLogedIn" routerLink="employee">Profile</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" *ngIf="isLogedIn" routerLink="employer">Profile</a>
+            </li>
+            
 
             <li class="nav-item">
                 <a class="nav-link text-warning" *ngIf="isLogedIn" routerLink="post">Post</a>
