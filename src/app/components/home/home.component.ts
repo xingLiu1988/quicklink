@@ -1,4 +1,5 @@
-import { Post } from './../../models/post.model';
+import { PostServiceService } from './../../services/post-service.service';
+import { Post } from '../../models/post.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,21 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public posts: Post[] = [
-    {
-      postId: 0,
-      companyName: 'company1',
-      title: 'jobTitle1',
-      category: 'restaurant',
-      location: 'NY',
-      salary: 0,
-      phoneNumber: 0,
-      description: '',
-      employerId: 1
-    }
-  ];
+  public posts: Post[] = []; // hold all jobs
+  public copyOfPosts: Post[] = []; // used to hold filtered jobs
 
-  constructor() {}
+  constructor(private postService: PostServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllPosts();
+  }
+
+  getAllPosts():void {
+    this.postService.getAllJobs().subscribe(data =>{
+      this.posts = data;
+      this.copyOfPosts = this.posts;
+    });
+  }
 }
