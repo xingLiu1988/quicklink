@@ -18,15 +18,7 @@ export class EmployeeComponent implements OnInit {
   public clientMessage: ClientMessage = new ClientMessage('');
 
   constructor(private profileService: ProfileServiceService) { }
-  // id: number;
-  // firstName: string;
-  // lastName: string;
-  // username: string;
-  // password: string;
-  // email: string;
-  // phoneNumber: string;
-  // address: string;
-  // role: string;
+
   ngOnInit(): void {
     this.validateEmployee();
   }

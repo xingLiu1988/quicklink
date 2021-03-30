@@ -1,20 +1,82 @@
-<!-- <p>employer works!</p> -->
 <!-- show only when user didn't setup info -->
-<div class="incomplete" *ngIf="!employer.firstName; else info">
-    <a routerLink="submit-profile"><strong>Please, complete your profile</strong></a>
+<div class="incomplete container jumbotron text-center text-danger font-weight-bold" *ngIf="!infoCompleted">
+    Please, complete your profile
 </div>
 
 <!-- show only when user setup info already -->
 
-<ng-template #info class="card">
-    <div class="card">
 
-        <h1>{{ employer.firstName }} {{ employer.lastName }}</h1>
-        <h3>Company: <i>{{ employer.companyName }}</i></h3>
-        <h3>Email: <i>{{ employer.email }}</i></h3>
-        <h3>Phone: <i>{{ employer.phone }}</i></h3>
-        <h3>Address: <i>{{ employer.address }}</i></h3>
+<div class="card" *ngIf="infoCompleted">
+    <h1>{{ employee.firstName }} {{ employee.lastName }}</h1>
+    <h3>username: {{employee.username}}</h3>
+    <h3>Email: <i>{{ employee.email }}</i></h3>
+    <h3>Phone: <i>{{ employee.phoneNumber }}</i></h3>
+    <h3>Address: <i>{{ employee.address }}</i></h3>
+</div>
 
+<div class="main-content" *ngIf="!infoCompleted">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 m-auto order-xl-1">
+                <div class="card bg-secondary shadow">
+                    <div class="card-body">
+                        <div class="pl-lg-4">
+                            <!-- first and last name -->
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-first-name">First name</label>
+                                        <input [(ngModel)]="employee.firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-last-name">Last name</label>
+                                        <input [(ngModel)]="employee.lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- email -->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-email">Email address</label>
+                                        <input type="email" [(ngModel)]="employee.email" id="input-email" class="form-control form-control-alternative" placeholder="example@example.com">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- phone number -->
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-address">Phone Number</label>
+                                        <input id="input-address" [(ngModel)]="employee.phoneNumber" class="form-control form-control-alternative" placeholder="phone number" value="" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- address -->
+                        <div class="pl-lg-4">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group focused">
+                                        <label class="form-control-label" for="input-address">Address</label>
+                                        <input id="input-address" [(ngModel)]="employee.address" class="form-control form-control-alternative" placeholder="Home Address" value="" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{clientMessage.message}}
+                        <!-- update button -->
+                        <button class="btn btn-block btn-primary" (click)="updateEmployeeInfo()">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-</ng-template>
+</div>

@@ -1,4 +1,6 @@
-import { Employer } from './../../models/employer.model';
+import { ClientMessage } from './../../models/client-message.model';
+import { ProfileServiceService } from './../../services/profile-service.service';
+import { Employee } from './../../models/employee.model';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -9,12 +11,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployerComponent implements OnInit {
 
-  employer: Employer = new Employer('XXX', 'John', 'Doe', 'johnd@mail.com', 999-999-999, '111 Abs St.');
+  employee: Employee = new Employee(0, '', '', '', '', '', '', '', 'employer');
 
-  constructor() { }
+  infoCompleted: boolean = false;
+
+  public clientMessage: ClientMessage = new ClientMessage('');
+
+  constructor(private profileService: ProfileServiceService) { }
 
   ngOnInit(): void {
-    
+    this.validateEmployee();
   }
 
+
+  public updateEmployeeInfo(): void {
+    this.profileService.updateEmployee(this.employee).subscribe(data => {
+      if(data){
+        this.clientMessage.message = "Success";
+        this.infoCompleted = true;
+      }
+    },
+      error => this.clientMessage.message = "SOMETHING WENT WRONG!");
+  }
+
+  validateEmployee():void {
+    // get current user
+    const userString =  sessionStorage.getItem('currentUser');
+    const currentUser = JSON.parse(userString || '');
+    console.log(currentUser);
+
+    // set current user
+    this.employee = currentUser;
+
+    // check if set up info 
+    if(!currentUser.firstName){
+      this.infoCompleted = false;
+    }else {
+      this.infoCompleted = true;
+    }
+  }
 }
