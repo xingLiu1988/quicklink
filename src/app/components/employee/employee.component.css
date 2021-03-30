@@ -803,6 +803,7 @@ button.bg-white:focus {
 
 .main-content {
     position: relative;
+    padding-bottom: 200px;
 }
 
 .footer {
@@ -817,7 +818,7 @@ button.bg-white:focus {
 .form-control-label {
     font-size: .875rem;
     font-weight: 600;
-    color: #525f7f;
+    color: #adb3c0;
 }
 
 .form-control {
@@ -860,6 +861,7 @@ textarea[resize='horizontal'] {
 
 .form-control-alternative:focus {
     box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    
 }
 
 .focused .form-control {
@@ -912,4 +914,8 @@ p {
     .btn {
         margin-bottom: 10px;
     }
+}
+
+input {
+    color: red !important;
 }

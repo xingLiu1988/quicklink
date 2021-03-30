@@ -5,7 +5,7 @@ export class Employee {
   username: string;
   password: string;
   email: string;
-  phoneNumber: number;
+  phoneNumber: string;
   address: string;
   role: string;
 
@@ -16,7 +16,7 @@ export class Employee {
     username: string,
     password: string,
     email: string,
-    phoneNumber: number,
+    phoneNumber: string,
     address: string,
     role: string
   ) {
