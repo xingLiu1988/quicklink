@@ -21,7 +21,9 @@ const routes: Routes = [
   {path: 'employer', component: EmployerComponent},
   {path: 'post', component: PostComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'job-details/:postId', component: JobDetailsComponent}
+  {path: 'job-details/:postId', component: JobDetailsComponent},
+  {path: 'profile1', component: EmployeeComponent},
+  {path: 'profile2', component: EmployerComponent}
 ];
 
 @NgModule({
