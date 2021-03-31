@@ -9,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  public posts: Post[] = []; // hold all jobs
+  public posts: Post[] = []; // hold all original jobs
   public copyOfPosts: Post[] = []; // used to hold filtered jobs
 
+  public location:string = 'all';
+  public cat:string = 'all';
   constructor(private postService: PostServiceService, private router: Router) {}
 
   ngOnInit(): void {
@@ -27,9 +29,23 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // used to redirect to detail page when user click on jobs
-  // gotoDetail(post: Post):void {
-  //   console.log(post.postId);
-  //   this.router.navigate(['job-details'])
-  // }
+  change():void {
+    console.log('changed')
+    if(this.cat !== 'all' && this.location !== 'all'){
+      // when category not equal to all and location not equal to all
+      this.copyOfPosts = this.posts.filter(e => e.category === this.cat && e.location === this.location);
+
+    }else if(this.cat === 'all' && this.location != 'all'){
+      // when category equal all and location not equal to all
+      this.copyOfPosts = this.posts.filter(e => e.location === this.location);
+
+    }else if(this.cat !== 'all' && this.location === 'all'){
+      // when category not equal to all and location equal to all
+      this.copyOfPosts = this.posts.filter(e => e.category === this.cat);
+
+    }else {
+      // when category equal to all and location equal to all
+      this.copyOfPosts = this.posts;
+    }
+  }
 }

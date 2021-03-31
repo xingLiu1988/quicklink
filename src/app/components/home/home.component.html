@@ -5,12 +5,15 @@
                         <div class="col-6">
                                 <div class="form-group">
                                         <label for="category">By Category</label>
-                                        <select class="form-control">
-                                                <option value="">1</option>
-                                                <option value="">1</option>
-                                                <option value="">1</option>
-                                                <option value="">1</option>
-                                                <option value="">1</option>
+                                        <select class="form-control" (change)="change()" [(ngModel)]="cat">
+                                                <option value="all">all jobs</option>
+                                                <option value="accounting">accounting</option>
+                                                <option value="education">education</option>
+                                                <option value="food">food</option>
+                                                <option value="sales">sales</option>
+                                                <option value="security">security</option>
+                                                <option value="driver">driver</option>
+                                                <option value="marketing">marketing</option>
                                         </select>
                                 </div>
                         </div>
@@ -19,7 +22,8 @@
                         <div class="col-6">
                                 <div class="form-group">
                                         <label for="location">By Location</label>
-                                        <select class="form-control">
+                                        <select class="form-control" (change)="change()" [(ngModel)]="location">
+                                                <option value="all">all locations</option>
                                                 <option value="AL">Alabama</option>
                                                 <option value="AK">Alaska</option>
                                                 <option value="AZ">Arizona</option>
@@ -79,11 +83,14 @@
 
         <!-- display all jobs -->
         <div class="box">
-                <div class="jobs mb-4 p-2" *ngFor="let post of copyOfPosts" [routerLink]="['/job-details', post.postId]" >
+                <div class="jobs mb-4 p-2" *ngFor="let post of copyOfPosts" [routerLink]="['/job-details', post.postId]">
                         <div class="line1"><span class="font-weight-bold">Company:</span> {{post.companyName}}</div>
                         <div class="line2 mt-1"><span class="font-weight-bold">Job Title:</span> {{post.title}}</div>
-                        <div class="line3 text-secondary mt-1"><span class="font-weight-bold text-dark">Location:</span> {{post.location}} </div>  
+                        <div class="line3 text-secondary mt-1"><span class="font-weight-bold text-dark">Location:</span> {{post.location}} </div>
                 </div>
+        </div>
+        <div *ngIf="!copyOfPosts.length" class="noJobs">
+                We don't have any jobs as you required
         </div>
         <br>
         <br>

@@ -34,7 +34,7 @@
                 <a class="nav-link" *ngIf="userType == 2" routerLink="profile2">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-warning" *ngIf="isLogedIn" routerLink="post">Post</a>
+                <a class="nav-link text-warning" *ngIf="isLogedIn && userType == 2" routerLink="post">Post</a>
             </li>
 
         </ul>
