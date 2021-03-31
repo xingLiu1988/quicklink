@@ -1,3 +1,5 @@
+import { PostServiceService } from './../../services/post-service.service';
+import { Post } from './../../models/post.model';
 import { ClientMessage } from './../../models/client-message.model';
 import { ProfileServiceService } from './../../services/profile-service.service';
 import { Employee } from './../../models/employee.model';
@@ -15,12 +17,15 @@ export class EmployerComponent implements OnInit {
 
   infoCompleted: boolean = false;
 
+  myPosts: Post[] = []; // used to hold current user posts
+
   public clientMessage: ClientMessage = new ClientMessage('');
 
-  constructor(private profileService: ProfileServiceService) { }
+  constructor(private profileService: ProfileServiceService, private postService: PostServiceService) { }
 
   ngOnInit(): void {
     this.validateEmployee();
+    this.showMyPosts();
   }
 
 
@@ -49,5 +54,11 @@ export class EmployerComponent implements OnInit {
     }else {
       this.infoCompleted = true;
     }
+  }
+
+  showMyPosts(): void{
+    this.postService.getAllJobs().subscribe(data => {
+      this.myPosts = data.filter(e => e.employerId === this.employee.id);
+    })
   }
 }

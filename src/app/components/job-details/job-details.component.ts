@@ -1,8 +1,8 @@
-import { ActivatedRoute, ParamMap  } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from './../../models/post.model';
 import { PostServiceService } from './../../services/post-service.service';
 import { Component, OnInit } from '@angular/core';
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-job-details',
   templateUrl: './job-details.component.html',
@@ -13,7 +13,7 @@ export class JobDetailsComponent implements OnInit {
   public posts: Post[] = []; // hold all jobs
   receivedId: any = '';
   public post:any;
-  constructor(private postService: PostServiceService, private router: ActivatedRoute ) { }
+  constructor(private postService: PostServiceService, private router: ActivatedRoute, private location: Location ) { }
 
   ngOnInit(): void {
     this.receivedId = this.router.snapshot.params['postId'];
@@ -34,6 +34,10 @@ export class JobDetailsComponent implements OnInit {
     });
   }
 
+
+  goback():void {
+    this.location.back();
+  }
   
 
 }
