@@ -12,7 +12,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employer.component.css']
 })
 export class EmployerComponent implements OnInit {
-
   employee: Employee = new Employee(0, '', '', '', '', '', '', '', 'employer');
 
   infoCompleted: boolean = false;
@@ -60,5 +59,14 @@ export class EmployerComponent implements OnInit {
     this.postService.getAllJobs().subscribe(data => {
       this.myPosts = data.filter(e => e.employerId === this.employee.id);
     })
+  }
+
+  delete(post: Post):void {
+    console.log(post);
+    this.postService.delete(post).subscribe(data => {
+      if(data){
+        alert('deleted');
+      }
+    });
   }
 }

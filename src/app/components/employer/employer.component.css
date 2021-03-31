@@ -17,11 +17,11 @@ button {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    border-radius: 5px;
 }
 
 a {
@@ -38,8 +38,16 @@ a:hover {
     background-color: rgb(245, 245, 245);
     border-radius: 10px;
     border: 1px solid rgb(231, 231, 231);
-    cursor: pointer;
+    
 }
 .jobs:hover {
     background-color: rgb(233, 243, 214);
+}
+
+.container {
+    padding-bottom: 180px;
+}
+
+.delete:hover {
+    color: red;
 }

@@ -42,4 +42,13 @@ export class PostServiceService {
       catchError(this.handleError<Post[]>('getAllJobs',[]))
     )
   }
+
+  // delete post
+  public delete(post: Post): Observable<any> {
+    console.log(post);
+    return this.http.post<any>(`${QUICKLINK_URL}delete`, post, this.httpOptions)
+    .pipe(
+      catchError(this.handleError<any>('cannot delete'))
+    )
+  }
 }
